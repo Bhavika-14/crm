@@ -14,8 +14,10 @@ class EditCustomer extends React.Component{
             
         }
     }
+    
     async onSubmit(e){
         e.preventDefault()
+
         console.log(this.state)
         const cust={
             name:this.state.name,
@@ -89,7 +91,7 @@ class EditCustomer extends React.Component{
                     <button type="submit" class="btn btn-primary" onClick={this.onSubmit}>Update</button>
                 </div> 
                 <div className="col-6">
-                    <button onClick={()=>this.props.setadd(false)}>Cancel</button>
+                    <button onClick={this.props.setadd(false)}>Cancel</button>
                 </div>
               </form>
               </div>

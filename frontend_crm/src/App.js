@@ -64,20 +64,23 @@ function App() {
         </h1>
         <main>
         <div className="container mt-5 col-6">
+        <div className="mb-3">
+                <button type="button" className="btn btn-success" onClick={()=>setadd(true)}>Add a new Customer</button>
+                </div>
+                {
+                  showadd && <AddCustomer setadd={setadd} />
+                }
               
             
-            <div className="mb-3">
-            <button type="button" className="btn btn-success" onClick={()=>setadd(true)}>Add a new Customer</button>
-            </div>
-            {
-              showadd && <AddCustomer setadd={setadd} />
-            }
+            
             
               <div>
               
-                {list && <ul className="list-group"><Customerlist customers={customers} showcard={showcard} /></ul>} 
+                {list &&
+                
+                <ul className="list-group"><Customerlist customers={customers} showcard={showcard} /></ul>} 
               
-                <Customerdetails customer={customer} showlist={showlist} customerdelete={customerdelete} setcard={setcard} edit={edit} card={card} setedit={setedit} />
+                <Customerdetails customer={customer} id={customer._id} showlist={showlist} customerdelete={customerdelete} setcard={setcard} edit={edit} card={card} setedit={setedit} setadd={setadd} />
                 
               </div>
             

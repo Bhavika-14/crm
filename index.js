@@ -1,8 +1,9 @@
 const express =require('express');
 const app=express();
+require('dotenv')
 const port=process.env.PORT || 3001;
 var mongoose=require('mongoose')
-var mongoDB='mongodb+srv://crm:crm1234@cluster1.xpfeo.mongodb.net/?retryWrites=true&w=majority'
+var mongoDB=process.env.MONGO_URL
 mongoose.connect(mongoDB,{useNewUrlParser:true, useUnifiedTopology:true})
 var db=mongoose.connection
 db.on('error',console.error.bind(console,'MongoDB connection error:'))

@@ -44,6 +44,7 @@ class AddCustomer extends React.Component{
     
         
     }
+
     
     
     
@@ -92,6 +93,6 @@ class AddCustomer extends React.Component{
               </div>
             </>
         )
-    }
+                }
 }
 export default AddCustomer
